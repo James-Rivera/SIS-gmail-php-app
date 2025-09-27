@@ -197,7 +197,7 @@ try {
 <body>
     <header class="bg-header text-white py-20 mb-4">
         <div class="container header-inner d-flex align-items-center">
-            <img src="logo.svg" alt="Flow Logo" class="me-3" style="height: 51px; width:51px;">
+            <img src="assets/svg/logo.svg" alt="Flow Logo" class="me-3" style="height: 51px; width:51px;">
             <div class="d-flex flex-column brand-stack">
                 <span class="brand-main lh-tight">FLOW</span>
                 <small class="brand-sub lh-tight">Mail Hub</small>
@@ -209,7 +209,7 @@ try {
             </div>
 
             <div class="ms-auto">
-                <img src="user.svg" alt="User" class="rounded-circle" style="height:32px; width:32px;">
+                <img src="assets/svg/user.svg" alt="User" class="rounded-circle" style="height:32px; width:32px;">
             </div>
         </div>
     </header>

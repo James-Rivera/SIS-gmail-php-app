@@ -124,7 +124,7 @@
 <body>
     <header class="bg-header text-white py-20 mb-4">
         <div class="container header-inner d-flex align-items-center">
-            <img src="logo.svg" alt="Wave Logo" class="me-3" style="height: 51px; width:51px;">
+            <img src="assets/svg/logo.svg" alt="Wave Logo" class="me-3" style="height: 51px; width:51px;">
             <div class="d-flex flex-column brand-stack">
                 <span class="brand-main lh-tight">FLOW</span>
                 <small class="brand-sub lh-tight">Mail Hub</small>
@@ -136,7 +136,7 @@
             </div>
 
             <div class="ms-auto">
-                <img src="user.svg" alt="User" class="rounded-circle" style="height:32px; width:32px;">
+                <img src="assets/svg/user.svg" alt="User" class="rounded-circle" style="height:32px; width:32px;">
             </div>
         </div>
     </header>
@@ -147,7 +147,7 @@
                     <div class="card-custom">
                         <div class="text-center">
                             <div class="card-icon">
-                                <img src="compose.svg" alt="compose">
+                                <img src="assets/svg/compose.svg" alt="compose">
                             </div>
                             <div class="card-title">Compose Email</div>
                             <div class="card-desc">Send a new message using PHPMailer.</div>
@@ -161,7 +161,7 @@
                     <div class="card-custom">
                         <div class="text-center">
                             <div class="card-icon">
-                                <img src="fetch.svg" alt="fetch">
+                                <img src="assets/svg/fetch.svg" alt="fetch">
                             </div>
                             <div class="card-title">View Inbox</div>
                             <div class="card-desc">Fetch and view the latest emails via IMAP</div>
