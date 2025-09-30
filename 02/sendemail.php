@@ -1,51 +1,46 @@
 <?php
-// 1. REQUIRE PHPMailer & AUTOLOAD
+// Refactored: Use alternative syntax and structure
+require_once __DIR__ . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require __DIR__ . '/vendor/autoload.php';
 
-// Initialize status variable
 $status_message = '';
-$status_class = ''; // For Bootstrap alert color
+$status_class = '';
 
-// 2. CHECK IF FORM WAS SUBMITTED
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // 3. CAPTURE FORM DATA
-    $recipient = $_POST['recipient'] ?? '';
-    $subject   = $_POST['subject'] ?? 'No Subject';
-    $message   = $_POST['message'] ?? 'Empty Message';
-    
-    $mail = new PHPMailer(true);
+if (strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') === 0) {
+    // Get form data with filter_input
+    $recipient = filter_input(INPUT_POST, 'recipient', FILTER_VALIDATE_EMAIL);
+    $subject = isset($_POST['subject']) ? $_POST['subject'] : 'No Subject';
+    $message = isset($_POST['message']) ? $_POST['message'] : 'Empty Message';
 
+    $mailer = new PHPMailer(true);
     try {
-        // --- PHPMailer Settings ---
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'avera.visuals@gmail.com';     // Your Gmail address
-        $mail->Password   = 'qcmdrapfxecmmtnp';           // Your generated App Password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
-        
-        // --- Recipients and Content (USING FORM DATA) ---
-        $mail->setFrom('avera.visuals@gmail.com', 'Avera Visuals (Flow Mail)');
-        
-        // Add the dynamic recipient from the form
-        $mail->addAddress($recipient); 
-        
-        // Set dynamic content
-        $mail->isHTML(true); 
-        $mail->Subject = $subject;
-        $mail->Body    = nl2br(htmlspecialchars($message)); // nl2br converts newlines to <br>
-        $mail->AltBody = htmlspecialchars($message); // Plain text fallback
-        
-        $mail->send();
-        $status_message = 'Email sent successfully!';
-        $status_class = 'success';
-        
-    } catch (Exception $e) {
-        $status_message = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $mailer->isSMTP();
+        $mailer->Host = 'smtp.gmail.com';
+        $mailer->SMTPAuth = true;
+        $mailer->Username = 'laurenceadrian1@gmail.com';
+        $mailer->Password = 'amxuksvdounuvygk';
+        $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mailer->Port = 587;
+
+        $mailer->setFrom('caranaylaurence11@gmail.com', 'Caranay Sender (Flow Mail)');
+        if ($recipient) {
+            $mailer->addAddress($recipient);
+        }
+        $mailer->isHTML(true);
+        $mailer->Subject = $subject;
+        $mailer->Body = nl2br(htmlentities($message));
+        $mailer->AltBody = strip_tags($message);
+
+        if ($recipient && $mailer->send()) {
+            $status_message = 'Email sent successfully!';
+            $status_class = 'success';
+        } else {
+            $status_message = 'Invalid recipient email address.';
+            $status_class = 'danger';
+        }
+    } catch (Exception $ex) {
+        $status_message = 'Message could not be sent. Mailer Error: ' . $mailer->ErrorInfo;
         $status_class = 'danger';
     }
 }
