@@ -1,8 +1,8 @@
 <?php
 // Connect to Gmail IMAP server
 $hostname = '{imap.gmail.com:993/imap/ssl/novalidate-cert}INBOX';
-$username = 'jamescarlorivera52@gmail.com';
-$password = 'jiimqbowhcyjwgrz';
+$username = 'laurenceadrian1@gmail.com';
+$password = 'amxuksvdounuvygk';
 
 $emails_data = [];
 $error_message = '';
