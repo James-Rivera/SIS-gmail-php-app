@@ -1,25 +1,17 @@
-# 📧 Flow Mail - Gmail Integration Hub
+## Flow Mail - Gmail Integration Hub
 
 A modern web application for Gmail integration built with PHP, Bootstrap, and PHPMailer. This project provides a clean interface for composing and fetching emails through Gmail's SMTP and IMAP protocols.
 
-## 🌟 Features
+## Features
 
-- **📝 Compose Email**: Send emails using PHPMailer with Gmail SMTP
-- **📬 Inbox Viewer**: Fetch and display latest emails via Gmail IMAP
-- **🎨 Dark Theme**: Modern dark UI with gradient backgrounds
-- **📱 Responsive Design**: Bootstrap-powered responsive layout
-- **🔐 Secure Authentication**: Gmail App Password integration
+Compose Email**: Send emails using PHPMailer with Gmail SMTP
+Inbox Viewer**: Fetch and display latest emails via Gmail IMAP
+Dark Theme**: Modern dark UI with gradient backgrounds
+Responsive Design**: Bootstrap-powered responsive layout
+ecure Authentication**: Gmail App Password integration
 
-## 🛠️ Tech Stack
 
-- **Backend**: PHP 8+
-- **Frontend**: HTML5, CSS3, Bootstrap 5.3.3
-- **Email Library**: PHPMailer
-- **Fonts**: Satoshi (via CDN)
-- **Icons**: Custom SVG assets
-- **Dependency Management**: Composer
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 Flow Mail/
@@ -37,7 +29,7 @@ Flow Mail/
 └── README.md          # This file
 ```
 
-## 🚀 Installation
+##  Installation
 
 ### Prerequisites
 - PHP 8.0 or higher
@@ -104,80 +96,4 @@ Flow Mail/
 - Shows sender, subject, date, and preview
 - Auto-refreshes email list
 
-## 🔧 Configuration
 
-### Email Settings
-The application uses Gmail's servers:
-- **SMTP Server**: smtp.gmail.com:587 (TLS)
-- **IMAP Server**: imap.gmail.com:993 (SSL)
-
-### Security Notes
-- Never commit real credentials to version control
-- Use environment variables for production
-- Enable 2FA on Gmail account
-- Use App Passwords instead of account password
-
-## 🎨 Customization
-
-### Theme Colors
-Customize the color scheme in CSS variables:
-```css
-:root {
-    --ff-satoshi: 'Satoshi', sans-serif;
-    --card-bg: #0b0b0b;      /* Dark card background */
-    --accent: #dfdfdf;        /* Button/accent color */
-}
-```
-
-### Layout
-- Cards: Adjust `gap` in `.cards-row` for spacing
-- Container: Modify `max-width` in `.app-container`
-- Typography: Change font sizes in component classes
-
-## 📋 Requirements
-
-- **PHP Extensions**:
-  - `openssl`
-  - `imap`
-  - `mbstring`
-  
-- **Composer Packages**:
-  - `phpmailer/phpmailer`
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**SMTP Connection Failed**
-- Verify Gmail credentials
-- Check App Password is correct
-- Ensure 2FA is enabled on Gmail
-
-**IMAP Connection Error**
-- Enable "Less secure app access" (not recommended)
-- Use App Password instead
-- Check IMAP is enabled in Gmail settings
-
-**Icons Not Loading**
-- Verify SVG files are in `assets/svg/`
-- Check file permissions
-- Ensure web server serves static files
-
-## 👥 Contributors
-
-- **James Carlo Rivera** - *Initial Development*
-- **Group 4** - *System Integration & Architecture*
-
-## 📄 License
-
-This project is created for educational purposes as part of System Integration and Architecture coursework.
-
-## 🔗 Links
-
-- [PHPMailer Documentation](https://github.com/PHPMailer/PHPMailer)
-- [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/)
-- [Gmail App Password Setup](https://support.google.com/accounts/answer/185833)
-
----
-
-**Built with ❤️ by Group 4 - BSIT 3rd Year**
